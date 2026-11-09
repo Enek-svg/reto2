@@ -1,6 +1,3 @@
-PC WILDER - SCRIPTS DE PYTHON
-=============================
-
 Programas incluidos
 -------------------
 1. inventario.py
