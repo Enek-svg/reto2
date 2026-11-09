@@ -1,10 +1,15 @@
+# Permite crear, modificar y eliminar usuarios, y guardar el resultado en usuarios.txt.
+
+# Lista con los nombres de todos los usuarios creados
 usuarios = []
+# Cada departamento es [nombre, usuario asignado, cargo]. "VACIO" = sin usuario
 Departamentos = [
     ["SistemasIT", "VACIO", "Tecnico"],
     ["Desarollo", "VACIO", "Programador"],
     ["Redes", "VACIO", "Soporte"],
     ["Administracion", "VACIO", "Administrativo"]
 ]
+# Bucle principal: muestra el menú hasta que el usuario elige salir
 while True:
     print("========================")
     print("1. Crear Usuario")
@@ -15,6 +20,7 @@ while True:
     print("========================")
     menu = int(input("Bienvenido a la terminal de usuarios, que desea hacer? (del 1 al 5): "))
     
+    # OPCIÓN 1: crear un usuario y asignarlo a un departamento
     if menu == 1:
         new = input("Introduce el nombre del nuevo usuario: ")
         usuarios.append(new)
@@ -40,6 +46,7 @@ while True:
         else:
             print("Error, intentalo de nuevo.")
         
+    # OPCIÓN 2: modificar un usuario (cambiar nombre o intercambiar departamento)
     elif menu == 2:
         edit = input("Introduce el nombre del usuario a editar: ")
         if edit in usuarios:
@@ -48,6 +55,7 @@ while True:
             print("2. Cambiar este usuario por otro (Intercambiar departamentos).")
             print("========================")
             menu1 = int(input("Que quieres cambiar de este usuario? (DEL 1 AL 2): "))
+            # Cambiar el nombre: se actualiza en la lista de usuarios y en el departamento
             if menu1 == 1:
                 nuevo_nombre = input("Escribe el nuevo nombre para este usuario: ")
 
@@ -59,6 +67,7 @@ while True:
                         b[1] = nuevo_nombre
                         print("El nombre del usuario se ha cambiado correctamente.")
 
+            # Intercambiar departamento: busca el departamento actual y lo cambia por el elegido
             elif menu1 == 2:
                 dep_origen = -1
                 for c in range(len(Departamentos)):
@@ -82,6 +91,7 @@ while True:
                 else:
                     print("El usuario no esta asignado a ningun departamento.")
 
+    # OPCIÓN 3: eliminar un usuario y dejar su departamento como VACIO
     elif menu == 3:
         old = input("Introduce el nombre del usuario a eliminar: ")
 
@@ -95,6 +105,7 @@ while True:
         else:
             print("Este usuario no existe en la lista.")
 
+    # OPCIÓN 4: mostrar los usuarios y el estado de cada departamento
     elif menu == 4:
         print("========================")
         print("Usuarios registrados:", usuarios)
@@ -106,6 +117,7 @@ while True:
             print(f"- Departamento: {d[0]} | Usuario: {d[1]} | Cargo: {d[2]}")
             print("========================")
     
+    # OPCIÓN 5: guardar el estado de los departamentos en usuarios.txt y salir
     elif menu == 5:
         with open("usuarios.txt", "w", encoding="utf-8") as archivo:
             archivo.write("====LISTA-DE-DEPARTAMENTOS-Y-USUARIOS====\n")
@@ -115,5 +127,6 @@ while True:
 
         print("Gracias por usar la terminal de usuarios.")
         break
+    # Cualquier otra opción: aviso de error
     else:
         print("Opcion no valida, intentalo de nuevo.")
