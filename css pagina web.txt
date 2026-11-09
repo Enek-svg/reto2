@@ -1,0 +1,56 @@
+/* ===== PC WILDER - Estilos ===== */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&family=DM+Sans:wght@400;600&display=swap');
+
+/* Tipografía */
+body { font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, .hestia-title, .title { font-family: 'Rubik', sans-serif; color: #12284C; }
+
+/* Enlaces */
+a { color: #12284C; }
+a:hover { color: #C8A24B; }
+
+/* Menú */
+.navbar .navbar-nav > li > a { transition: color .2s; }
+.navbar .navbar-nav > li > a:hover { color: #C8A24B !important; }
+
+/* Botones */
+.btn.btn-primary, .btn-primary {
+  background-color: #C8A24B !important;
+  color: #12284C !important;
+  font-weight: 600;
+  border-radius: 30px !important;
+  transition: transform .2s, box-shadow .2s, background-color .2s;
+}
+.btn.btn-primary:hover {
+  background-color: #12284C !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(18, 40, 76, .35) !important;
+}
+
+/* Capa de color sobre la imagen de cabecera */
+.page-header.header-filter:before {
+  background-color: rgba(18, 40, 76, 0.65) !important;
+}
+
+/* Tarjetas y bloques */
+.card, .hestia-features .card, .wp-block-column {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(18, 40, 76, .12);
+  transition: transform .25s;
+}
+.card:hover, .wp-block-column:hover { transform: translateY(-5px); }
+
+/* Imágenes */
+img { border-radius: 10px; }
+
+/* Pie de página */
+.footer, footer.footer-black, .footer-black {
+  background: #12284C !important;
+  border-top: 4px solid #C8A24B;
+}
+.footer a { color: #C8A24B !important; }
+
+/* Desplazamiento suave */
+html { scroll-behavior: smooth; }
+ 
